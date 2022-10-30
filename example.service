@@ -1,0 +1,28 @@
+[Unit] # metadata and relation to other units
+Description= # describes name and functionality
+Requires= # other units that must start to allow this unit to start
+Wants= # less strict form of requires
+BindsTo= # requires, but unit will die if these die
+Before= # unit(s) here will only start after this unit
+After= # this unit will only start after unit(s) listed here
+Conflicts= # these units cannot run while this unit runs
+Condition= # check these conditions before starting
+
+[Install] # Behaviour if unit is enabled/disabled
+WantedBy= # What units/targets are required when this service is "enabled"
+RequiredBy= # Strict version of above
+Alias= # an alias for this unit
+Also= # enable these units as a group
+
+[Service] # define how the service (assuming it's a service) is handled by systemd
+Type= # what kind of service, e.g. simple, oneshot(short lifespan), notify(issue notification)
+RemainAfterExit= # considered active after exit (used for oneshots)
+ExecStart= # path to executable
+ExecStartPre= # commands to run pre ExecStart
+ExecStartPost= # commands to run post ExecStart
+ExecReload= # steps to run on reload 
+ExecStop= # steps to run on stop
+ExecStopPost= # Execute after stop
+RestartSec= # time to wait for restart (if restart configured)
+Restart= # conditions for systemd to restart service
+TimeoutSec=How long to wait before stopping a service
