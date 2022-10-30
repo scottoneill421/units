@@ -1,0 +1,9 @@
+[Unit]
+Description=Grafana
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/grafana --config /home/rpi-admin/src/grafana-9.1.6/conf/defaults.ini --homepath /home/rpi-admin/src/grafana-9.1.6
+
+[Install]
+WantedBy=multi-user.target
